@@ -15,13 +15,13 @@ require_once 'cabecalho.php';
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Bertonni</h2>
-          <p>Posição: Centro Avante. <br>
+          <p>Posição: Atacante. <br>
             Idade: 29 anos</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Victor</h2>
-          <p>Posição: Centro Avante. <br>
+          <p>Posição: Atacante. <br>
             Idade: 34 anos</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -57,7 +57,7 @@ require_once 'cabecalho.php';
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Emílio</h2>
-          <p>Posição: Centro Avante. <br>
+          <p>Posição: Atacante. <br>
             Idade: 30 anos</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
