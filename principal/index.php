@@ -89,7 +89,8 @@ session_start();
                 echo "<span style='color: white; margin-top: 1%;' class='navbar-form navbar-right'>Bem vindo(a), <b>" . $_SESSION['usuario'] . "</b>!! </span>";
               }
               if(isset($_POST['logout'])) {
-                unset($_SESSION['usuario']);
+                unset($_SESSION['usuario']);                
+                unset($_SESSION['funcao']);                
                 header("location: index.php");
               }
               ?>
