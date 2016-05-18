@@ -86,7 +86,7 @@ session_start();
                   <button class="btn btn-success" style="float: right;" type="submit" name="logout">Logout</button>
                 </form>
                 <?php
-                echo "<span style='color: white; margin-top: 1%;' class='navbar-form navbar-right'>Bem vindo(a), <b>" . $_SESSION['usuario'] . "</b>!! </span>";
+                echo "<span style='color: white; margin-top: 1%;' class='navbar-form navbar-right'>Bem vindo, <b>" . $_SESSION['usuario'] . "</b>!! </span>";
               }
               if(isset($_POST['logout'])) {
                 unset($_SESSION['usuario']);                

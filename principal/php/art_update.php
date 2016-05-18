@@ -52,7 +52,9 @@ $idGET = $_GET['id'];
                 if($idGET == $id){
                   echo "<tr>
                           <td>{$pos}</td>
-                          <td>". $array['peladeiro'] ."</td>
+                          <td>
+                            <input type='text' name='peladeiro' value='{$peladeiro}'
+                          </td>
                           <td>
                             <input type='text' name='gols' value='{$gols}'
                           </td>
