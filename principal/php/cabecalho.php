@@ -112,7 +112,7 @@ session_start();
         
         // Salva os dados do servidor, usuario, senha e nome do banco de dados para fazer a conexão
 
-        $servername = "localhost";
+        $servername = "server56.hostinger.com";
         $username = "ibra";
         $password = "ibra2365877";
         $dbname = "amigo";

@@ -1,6 +1,6 @@
 <?php
 
-$servername = "localhost";
+$servername = "server56.hostinger.com";
 $username = "ibra";
 $password = "ibra2365877";
 $dbname = "amigo";
