@@ -244,7 +244,7 @@ session_start();
   </body>
   </html>
   <?php
-  if(isset($_POST['enviar'])) {
+    if(isset($_POST['enviar'])) {
         $user = $_POST['usuario'];      // Salva o conteúdo do input name="usuario" do form de login na variável $user
         $pass = md5($_POST['senha']);   // Salva o conteúdo do input name="senha" do form de login na variável $pass
         
@@ -264,7 +264,7 @@ session_start();
         
         // consulta para puxar do banco usuario e senha que sejam iguais aos digitados no form de login
 
-        $query = "SELECT senha, usuario FROM usuarios WHERE usuario='$user' AND senha='$pass'";
+        $query = "SELECT senha, usuario, funcao FROM usuarios WHERE usuario='$user' AND senha='$pass'";
         $result = mysqli_query($link, $query);      // Executa a query e salva o resultado
         
         // Checa se houve resultado da consulta
@@ -272,10 +272,18 @@ session_start();
             $arr = mysqli_fetch_assoc($result);     // Transforma o resultado da consulta em um array associativo (os índices são as colunas da tabela 'usuarios')
             $row = mysqli_num_rows($result);        // Recebe o número de linhas retornadas da consulta ao banco
 
+            if($arr['funcao'] == "adm"){
+              if(!isset($_SESSION['funcao'])){
+                $_SESSION['funcao'] = "adm";
+                $funcao = "adm";
+              } else {
+                $funcao = $_SESSION['funcao'];
+              }
+            }
             // Checa se o usuário e senha digitados no form de login são iguais aos que estão salvos no banco de dados
             if($user == $arr['usuario'] && $pass == $arr['senha']){
                 // Se verdadeiro, salva o usuário na sessão
-              $_SESSION['usuario'] = $user;
+                $_SESSION['usuario'] = $user;
             }
 
             // Checa se o número de linhas retornadas da consulta é diferente de zero. Se verdadeiro, redireciona para a página "home.php"
