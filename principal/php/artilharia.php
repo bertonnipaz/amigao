@@ -2,9 +2,9 @@
 require_once 'cabecalho.php';
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "amigao";
+$username = "ibra";
+$password = "ibra2365877";
+$dbname = "amigo";
 
 $connect = mysqli_connect($servername, $username, $password, $dbname);
 

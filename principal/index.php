@@ -249,10 +249,10 @@ session_start();
         
         // Salva os dados do servidor, usuario, senha e nome do banco de dados para fazer a conexão
 
-        $server = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "amigao";
+        $servername = "localhost";
+        $username = "ibra";
+        $password = "ibra2365877";
+        $dbname = "amigo";
 
         $link = mysqli_connect ($server, $username, $password, $dbname);    // Faz a conexão com o banco de dados
         
