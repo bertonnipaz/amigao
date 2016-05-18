@@ -58,7 +58,7 @@ session_start();
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mais<span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Cadastro</a></li>
+                    <li><a href="php/cadastro.php">Cadastro</a></li>
                     <li><a href="#">Resenhas</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="#fotos">Fotos</a></li>
@@ -66,15 +66,33 @@ session_start();
                   </ul>
                 </li>
               </ul>
-              <form class="navbar-form navbar-right">
-                <div class="form-group">
-                  <input type="text" placeholder="Usuário" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input type="password" placeholder="Senha" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Entrar</button>
-              </form>
+              <?php
+              if(!isset($_SESSION['usuario'])){
+                ?>
+                <form class="navbar-form navbar-right" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                  <div class="form-group">
+                    <input type="text" placeholder="Usuário" name="usuario" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" placeholder="Senha" name="senha" class="form-control" required>
+                  </div>
+                  <button type="submit" class="btn btn-success" name="enviar">Entrar</button>
+                </form>
+                <?php
+              } else {
+
+                ?>
+                <form class="navbar-form navbar-right" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                    <button class="btn btn-success" style="float: right;" type="submit" name="logout">Logout</button>
+                </form>
+                <?php
+                echo "<span style='color: white; margin-top: 1%;' class='navbar-form navbar-right'>Bem vindo(a), <b>" . $_SESSION['usuario'] . "</b>!! </span>";
+                }
+                if(isset($_POST['logout'])) {
+                unset($_SESSION['usuario']);
+                header("location: index.php");
+              }
+              ?>
             </div>
           </div>
         </div>
@@ -100,7 +118,7 @@ session_start();
             <div class="carousel-caption">
               <h1>Pelada do Amigão</h1>
               <p>A pelada do Amigão retornou no dia 01/05/2016 e resgatou a sua essência, que é promover a amizade entre seus participantes.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Cadastre-se</a></p>
+              <p><a class="btn btn-lg btn-primary" href="php/cadastro.php" role="button">Cadastre-se</a></p>
             </div>
           </div>
         </div>

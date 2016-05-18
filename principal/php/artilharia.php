@@ -1,6 +1,7 @@
 <?php
 require_once 'cabecalho.php';
 ?>
+    <title>Artilharia</title>
     <div class="container marketing">
 
       <div class="container theme-showcase" role="main">

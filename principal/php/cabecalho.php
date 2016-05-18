@@ -12,8 +12,6 @@ session_start();
   <meta name="author" content="">
   <link rel="icon" href="../../favicon.ico">
 
-  <title>Carousel Template for Bootstrap</title>
-
   <!-- Bootstrap core CSS -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -54,17 +52,17 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="home.php">Pelada do Amigão</a>
+              <a class="navbar-brand" href="../index.php">Pelada do Amigão</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="home.php">Home</a></li>
+                <li><a href="../index.php">Home</a></li>
                 <li><a href="peladeiros.php">Peladeiros</a></li>
                 <li><a href="artilharia.php">Artilharia</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mais<span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Cadastro</a></li>
+                    <li><a href="cadastro.php">Cadastro</a></li>
                     <li><a href="#">Resenhas</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="#fotos">Fotos</a></li>
@@ -72,15 +70,33 @@ session_start();
                   </ul>
                 </li>
               </ul>
-              <form class="navbar-form navbar-right">
-                <div class="form-group">
-                  <input type="text" placeholder="Usuário" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input type="password" placeholder="Senha" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Entrar</button>
-              </form>
+              <?php
+              if(!isset($_SESSION['usuario'])){
+                ?>
+                <form class="navbar-form navbar-right" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                  <div class="form-group">
+                    <input type="text" placeholder="Usuário" name="usuario" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" placeholder="Senha" name="senha" class="form-control" required>
+                  </div>
+                  <button type="submit" class="btn btn-success" name="enviar">Entrar</button>
+                </form>
+                <?php
+              } else {
+
+                ?>
+                <form class="navbar-form navbar-right" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                    <button class="btn btn-success" style="float: right;" type="submit" name="logout">Logout</button>
+                </form>
+                <?php
+                echo "<span style='color: white; margin-top: 1%;' class='navbar-form navbar-right'>Bem vindo(a), <b>" . $_SESSION['usuario'] . "</b>!! </span>";
+              }
+              if(isset($_POST['logout'])) {
+                unset($_SESSION['usuario']);
+                header("location: ../index.php");
+              }
+              ?>
             </div>
           </div>
         </div>
@@ -88,3 +104,49 @@ session_start();
 
     </div>
   </div>
+  <?php
+     if(isset($_POST['enviar'])) {
+        $user = $_POST['usuario'];      // Salva o conteúdo do input name="usuario" do form de login na variável $user
+        $pass = md5($_POST['senha']);   // Salva o conteúdo do input name="senha" do form de login na variável $pass
+        
+        // Salva os dados do servidor, usuario, senha e nome do banco de dados para fazer a conexão
+
+        $server = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "amigao";
+
+        $link = mysqli_connect ($server, $username, $password, $dbname);    // Faz a conexão com o banco de dados
+        
+        // consulta para puxar do banco usuario e senha que sejam iguais aos digitados no form de login
+
+        $query = "SELECT senha, usuario FROM usuarios WHERE usuario='$user' AND senha='$pass'";
+        $result = mysqli_query($link, $query);      // Executa a query e salva o resultado
+        
+        // Checa se houve resultado da consulta
+        if($result){
+            $arr = mysqli_fetch_assoc($result);     // Transforma o resultado da consulta em um array associativo (os índices são as colunas da tabela 'usuarios')
+            $row = mysqli_num_rows($result);        // Recebe o número de linhas retornadas da consulta ao banco
+
+            // Checa se o usuário e senha digitados no form de login são iguais aos que estão salvos no banco de dados
+            if($user == $arr['usuario'] && $pass == $arr['senha']){
+                // Se verdadeiro, salva o usuário na sessão
+                $_SESSION['usuario'] = $user;
+            }
+
+            // Checa se o número de linhas retornadas da consulta é diferente de zero. Se verdadeiro, redireciona para a página "home.php"
+            if($row != 0) {
+                header("location: ../index.php");
+            }
+
+            // Senão, exibe um alerta para o usuário
+            else {
+                echo "<script>
+                alert('Usuário ou senha incorretos!!');
+                </script>";
+            }
+        }
+        // Encerra a conexão com o banco de dados
+        mysqli_close($link);
+    }
+  ?>
