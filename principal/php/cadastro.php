@@ -50,6 +50,15 @@ require_once 'cabecalho.php';
 	</div>
 <br>
 <br>
+<script type="text/javascript">
+$('form').on('submit', function () {
+    if($(this).find('input[name="senha"]').val() != $(this).find('input[name="confirma-senha"]').val()) {
+        alert("Senhas digitadas não conferem!!");
+        $('#senha').focus();
+        return false;
+    }
+});
+</script>
 <?php
 require_once 'rodape.php';
 ?>
