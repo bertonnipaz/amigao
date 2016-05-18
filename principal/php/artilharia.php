@@ -70,11 +70,6 @@ $pos = 0;
             </table>
           </div>
         </div>
-        <?php
-        if(isset($_SESSION['funcao']) && $_SESSION['funcao'] == "adm"){
-          echo "<a href='art_update.php'>Atualizar Tabela</a>";
-        }
-        ?>
       </div>
       <br>
       <br>
