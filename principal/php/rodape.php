@@ -1,10 +1,9 @@
   <footer>
         <p class="pull-right"><a href="../index.html">Voltar à página principal</a></p>
-        <p>&copy; 2005 Pelada do Amigão. &middot; <a href="#">Privacidade</a> &middot; <a href="#">Termos</a></p>
+        <p>&copy; 2005 Pelada do Amigão.</p>
       </footer>
 
     </div><!-- /.container -->
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

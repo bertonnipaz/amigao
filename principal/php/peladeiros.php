@@ -68,6 +68,8 @@ require_once 'cabecalho.php';
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
       </div>
+      <br>
+      <br>
       <!-- FOOTER -->
 <?php
 require_once 'rodape.php';

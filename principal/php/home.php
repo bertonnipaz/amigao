@@ -122,6 +122,8 @@ require_once 'cabecalho.php';
         </div>
         <p><a class="btn btn-default" href="artilharia.php" role="button">Ver Tabela Completa &raquo;</a></p>
       </div>
+      <br>
+      <br>
 <?php
 require_once 'rodape.php';
 ?>

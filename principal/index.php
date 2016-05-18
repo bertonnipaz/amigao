@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -164,7 +167,7 @@
             Idade: 29 anos</p>
           <p><a class="btn btn-default" href="php/peladeiros.php" role="button">Ver Todos &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+      </div><!-- /.container theme-showcase -->
       <div class="container theme-showcase" role="main">
         <div id="artilharia" class="page-header">
           <h1>Artilharia</h1>
@@ -202,10 +205,12 @@
         </div>
         <p><a class="btn btn-default" href="php/artilharia.php" role="button">Ver Tabela Completa &raquo;</a></p>
       </div>
+      <br>
+      <br>
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Ir para o topo</a></p>
-        <p>&copy; 2005 Pelada do Amigão. &middot; <a href="#">Privacidade</a> &middot; <a href="#">Termos</a></p>
+        <p>&copy; 2005 Pelada do Amigão.</p>
       </footer>
 
     </div><!-- /.container -->

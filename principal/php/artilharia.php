@@ -54,6 +54,8 @@ require_once 'cabecalho.php';
           </div>
         </div>
       </div>
+      <br>
+      <br>
 <?php
 require_once 'rodape.php';
 ?>
