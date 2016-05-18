@@ -8,7 +8,7 @@ require_once 'cabecalho.php';
           <h1>Peladeiros</h1>
         </div> -->
 
-        <div class="row">
+        <div class="container theme-showcase" role="main">
         <div id="peladeiros" class="page-header">
           <h1>Peladeiros</h1>
         </div>
