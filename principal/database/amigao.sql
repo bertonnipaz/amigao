@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2016 at 07:30 PM
+-- Generation Time: May 18, 2016 at 08:33 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.2
 
@@ -44,15 +44,15 @@ INSERT INTO `artilheiros` (`id`, `peladeiro`, `gols`) VALUES
 (5, 'Trigo', 0),
 (6, 'Emilio', 4),
 (7, 'Pikeno', 0),
-(8, 'GaÃºcho', 1),
+(8, 'Gaúcho', 1),
 (9, 'Daniel', 0),
 (10, 'Rodolfo', 0),
 (11, 'Andinho', 6),
 (12, 'Dubu', 2),
 (13, 'Fledson', 2),
-(14, 'AndrÃ© (BilÃ©)', 1),
-(15, 'AndrÃ© (Emilio)', 1),
-(16, 'AlemÃ£o', 2),
+(14, 'André (Bilé)', 1),
+(15, 'André (Emilio)', 1),
+(16, 'Alemão', 2),
 (17, 'Rafael', 1),
 (18, 'Elvyz', 2),
 (19, 'Doninho', 3);

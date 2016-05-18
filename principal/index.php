@@ -205,17 +205,17 @@ session_start();
                       <tr>
                         <td>1</td>
                         <td>Bertonni</td>
-                        <td>10</td>
+                        <td>6</td>
                       </tr>
                       <tr>
                         <td>2</td>
-                        <td>Emílio</td>
-                        <td>9</td>
+                        <td>Andinho</td>
+                        <td>6</td>
                       </tr>
                       <tr>
                         <td>3</td>
-                        <td>Victor</td>
-                        <td>8</td>
+                        <td>Agulha</td>
+                        <td>4</td>
                       </tr>
                     </tbody>
                   </table>
