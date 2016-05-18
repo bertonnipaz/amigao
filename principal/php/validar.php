@@ -26,8 +26,18 @@ if(isset($_POST['idade'])){
 $usuario = $_POST['usuario'];
 $senha = md5($_POST['senha']);
 
-$query = "INSERT INTO `usuarios` (`funcao`, `nome`, `idade`, `usuario`, `senha`) VALUES ('$funcao', '$nome', '$idade', '$usuario', '$senha')";
-$result = mysqli_query($connect, $query);
+$sql = "SELECT usuario FROM usuarios WHERE usuario = '$usuario'";
+$res = mysqli_query($connect, $sql);
+$row = mysqli_num_rows($res)
+
+if($row != 0){
+	if(!isset($_SESSION['dublicate'])){
+		$_SESSION['dublicate'] = "existe";
+	}
+} else {
+	$query = "INSERT INTO `usuarios` (`funcao`, `nome`, `idade`, `usuario`, `senha`) VALUES ('$funcao', '$nome', '$idade', '$usuario', '$senha')";
+	$result = mysqli_query($connect, $query);
+}
 
 if($result) {
 	header("location: ../index.php");

@@ -12,21 +12,25 @@ require_once 'cabecalho.php';
 		<div id="artilharia" class="page-header">
 			<h1>Cadastro</h1>
 		</div>
-
+		<?php
+		if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == "existe"){
+			echo "<span style='color: red;'>Alguem já está usando o nome de usuário escolhido, por favor, escolha outro</span>"
+		}
+		?>
 		<div class="row">
 			<form method="POST" action="validar.php">
 				<div class="col-md-6">
 					<label for="nome">Nome *</label>
-  					<input type="text" class="form-control" id="nome" name="nome" required>
+  					<input type="text" class="form-control" id="nome" name="nome" required placeholder="Digite seu nome">
 				</div>
 				<div class="col-md-4">
-					<label for="idade">Idade</label>
-  					<input type="text" class="form-control" id="idade" max-lenght="2" name="idade" required>
+					<label for="idade">Idade *</label>
+  					<input type="text" class="form-control" id="idade" max-lenght="2" name="idade" required placeholder="Digite sua idade">
 				</div>
 
 				<div class="col-md-4 user">
 					<label for="usuario">Usuário *</label>
-  					<input type="text" class="form-control" id="usuario" name="usuario" required>
+  					<input type="text" class="form-control" id="usuario" name="usuario" required placeholder="Digite um nome de usuário">
 				</div>
 				
 				<div class="col-md-3 user">
@@ -34,8 +38,8 @@ require_once 'cabecalho.php';
   					<input type="password" class="form-control" id="senha" name="senha" required placeholder="Digite sua senha">
 				</div>
 				<div class="col-md-3 user">
-					<label for="confirma-senha">Confirmar Senha *</label>
-  					<input type="password" class="form-control" id="confirma-senha" name="confirma-senha" required placeholder="Confirme sua senha">
+					<label for="confirma_senha">Confirmar Senha *</label>
+  					<input type="password" class="form-control" id="confirma_senha" name="confirma_senha" required placeholder="Confirme sua senha">
 				</div>
 				<div class="col-md-4">
   					<input type="hidden" class="form-control" name="funcao" value="membro">
@@ -52,7 +56,7 @@ require_once 'cabecalho.php';
 <br>
 <script type="text/javascript">
 $('form').on('submit', function () {
-    if($(this).find('input[name="senha"]').val() != $(this).find('input[name="confirma-senha"]').val()) {
+    if($(this).find('input[name="senha"]').val() != $(this).find('input[name="confirma_senha"]').val()) {
         alert("Senhas digitadas não conferem!!");
         $('#senha').focus();
         return false;
