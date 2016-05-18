@@ -53,10 +53,10 @@ $idGET = $_GET['id'];
                   echo "<tr>
                           <td>{$pos}</td>
                           <td>
-                            <input type='text' name='peladeiro' value='{$peladeiro}'
+                            <input type='text' name='peladeiro' value='{$peladeiro}'>
                           </td>
                           <td>
-                            <input type='text' name='gols' value='{$gols}'
+                            <input type='text' name='gols' value='{$gols}'>
                           </td>
                           <td>
                             <input name='id' type='hidden' id='id' value='{$id}'>
