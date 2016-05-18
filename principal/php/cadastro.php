@@ -14,7 +14,7 @@ require_once 'cabecalho.php';
 		</div>
 		<?php
 		if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == "existe"){
-			echo "<span style='color: red;'>Alguem já está usando o nome de usuário escolhido, por favor, escolha outro</span>"
+			echo "<span style='color: red;'>Alguem já está usando o nome de usuário escolhido, por favor, escolha outro</span>";
 		}
 		?>
 		<div class="row">
