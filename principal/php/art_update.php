@@ -1,20 +1,5 @@
 <?php
 require_once 'cabecalho.php';
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "amigao";
-
-$connect = mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$connect) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-
-$sql = "SELECT peladeiro, gols FROM `artilheiros` ORDER BY gols DESC";
-$result = mysqli_query($connect, $sql);
-$pos = 0;
 ?>
     <title>Artilharia</title>
     <div class="container marketing">
@@ -35,16 +20,36 @@ $pos = 0;
                 </tr>
               </thead>
               <tbody>
-              <?php
-              while($array = mysqli_fetch_assoc($result)){
-                $pos++;
-                echo "<tr>
-                        <td>". $pos ."</td>
-                        <td>". $array['peladeiro'] ."</td>
-                        <td>". $array['gols'] ."</td>
-                      </tr>";
-              }
-              ?>
+                <tr>
+                  <td>1</td>
+                  <td>Bertonni</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Emílio</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Victor</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Piqueno</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Beethoven</td>
+                  <td>7</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Daniel</td>
+                  <td>6</td>
+                </tr>
               </tbody>
             </table>
           </div>

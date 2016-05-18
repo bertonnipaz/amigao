@@ -11,16 +11,17 @@ if (!$connect) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
+$funcao = "membro";
 $nome = $_POST['nome'];
-$usuario = $_POST['usuario'];
-if(isset($_POST['nasc'])){
-	$nasc = $_POST['nasc'];
+if(isset($_POST['idade'])){
+	$idade = $_POST['idade'];
 } else {
-	$nasc = "";
+	$idade = "";
 }
+$usuario = $_POST['usuario'];
 $senha = md5($_POST['senha']);
 
-$query = "INSERT INTO `usuarios` (`nome`, `idade`, `usuario`, `senha`) VALUES ('$nome', '$idade', '$usuario', '$senha')";
+$query = "INSERT INTO `usuarios` (`funcao`, `nome`, `idade`, `usuario`, `senha`) VALUES ('$funcao', '$nome', '$idade', '$usuario', '$senha')";
 $result = mysqli_query($connect, $query);
 
 if($result) {

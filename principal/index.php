@@ -83,12 +83,12 @@ session_start();
 
                 ?>
                 <form class="navbar-form navbar-right" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-                    <button class="btn btn-success" style="float: right;" type="submit" name="logout">Logout</button>
+                  <button class="btn btn-success" style="float: right;" type="submit" name="logout">Logout</button>
                 </form>
                 <?php
                 echo "<span style='color: white; margin-top: 1%;' class='navbar-form navbar-right'>Bem vindo(a), <b>" . $_SESSION['usuario'] . "</b>!! </span>";
-                }
-                if(isset($_POST['logout'])) {
+              }
+              if(isset($_POST['logout'])) {
                 unset($_SESSION['usuario']);
                 header("location: index.php");
               }
@@ -169,69 +169,69 @@ session_start();
           <h2>Bertonni</h2>
           <p>Posição: Atacante. <br>
             Idade: 29 anos</p>
-          <p><a class="btn btn-default" href="php/peladeiros.php" role="button">Ver Todos &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Victor</h2>
-          <p>Posição: Atacante. <br>
-            Idade: 34 anos</p>
-          <p><a class="btn btn-default" href="php/peladeiros.php" role="button">Ver Todos &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Beethoven</h2>
-          <p>Posição: Zagueiro. <br>
-            Idade: 29 anos</p>
-          <p><a class="btn btn-default" href="php/peladeiros.php" role="button">Ver Todos &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.container theme-showcase -->
-      <div class="container theme-showcase" role="main">
-        <div id="artilharia" class="page-header">
-          <h1>Artilharia</h1>
-        </div>
+            <p><a class="btn btn-default" href="php/peladeiros.php" role="button">Ver Todos &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <h2>Victor</h2>
+            <p>Posição: Atacante. <br>
+              Idade: 34 anos</p>
+              <p><a class="btn btn-default" href="php/peladeiros.php" role="button">Ver Todos &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+              <h2>Beethoven</h2>
+              <p>Posição: Zagueiro. <br>
+                Idade: 29 anos</p>
+                <p><a class="btn btn-default" href="php/peladeiros.php" role="button">Ver Todos &raquo;</a></p>
+              </div><!-- /.col-lg-4 -->
+            </div><!-- /.container theme-showcase -->
+            <div class="container theme-showcase" role="main">
+              <div id="artilharia" class="page-header">
+                <h1>Artilharia</h1>
+              </div>
 
-        <div class="row">
-          <div class="col-md-6">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Nome</th>
-                  <th>Gols</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Bertonni</td>
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Emílio</td>
-                  <td>9</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Victor</td>
-                  <td>8</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <p><a class="btn btn-default" href="php/artilharia.php" role="button">Ver Tabela Completa &raquo;</a></p>
-      </div>
-      <br>
-      <br>
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Ir para o topo</a></p>
-        <p>&copy; 2005 Pelada do Amigão.</p>
-      </footer>
+              <div class="row">
+                <div class="col-md-6">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Gols</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Bertonni</td>
+                        <td>10</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Emílio</td>
+                        <td>9</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Victor</td>
+                        <td>8</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p><a class="btn btn-default" href="php/artilharia.php" role="button">Ver Tabela Completa &raquo;</a></p>
+            </div>
+            <br>
+            <br>
+            <!-- FOOTER -->
+            <footer>
+              <p class="pull-right"><a href="#">Ir para o topo</a></p>
+              <p>&copy; 2005 Pelada do Amigão.</p>
+            </footer>
 
-    </div><!-- /.container -->
+          </div><!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
@@ -242,3 +242,49 @@ session_start();
     <script src="js/bootstrap.min.js"></script>
   </body>
   </html>
+  <?php
+  if(isset($_POST['enviar'])) {
+        $user = $_POST['usuario'];      // Salva o conteúdo do input name="usuario" do form de login na variável $user
+        $pass = md5($_POST['senha']);   // Salva o conteúdo do input name="senha" do form de login na variável $pass
+        
+        // Salva os dados do servidor, usuario, senha e nome do banco de dados para fazer a conexão
+
+        $server = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "amigao";
+
+        $link = mysqli_connect ($server, $username, $password, $dbname);    // Faz a conexão com o banco de dados
+        
+        // consulta para puxar do banco usuario e senha que sejam iguais aos digitados no form de login
+
+        $query = "SELECT senha, usuario FROM usuarios WHERE usuario='$user' AND senha='$pass'";
+        $result = mysqli_query($link, $query);      // Executa a query e salva o resultado
+        
+        // Checa se houve resultado da consulta
+        if($result){
+            $arr = mysqli_fetch_assoc($result);     // Transforma o resultado da consulta em um array associativo (os índices são as colunas da tabela 'usuarios')
+            $row = mysqli_num_rows($result);        // Recebe o número de linhas retornadas da consulta ao banco
+
+            // Checa se o usuário e senha digitados no form de login são iguais aos que estão salvos no banco de dados
+            if($user == $arr['usuario'] && $pass == $arr['senha']){
+                // Se verdadeiro, salva o usuário na sessão
+              $_SESSION['usuario'] = $user;
+            }
+
+            // Checa se o número de linhas retornadas da consulta é diferente de zero. Se verdadeiro, redireciona para a página "home.php"
+            if($row != 0) {
+              header("location: index.php");
+            }
+
+            // Senão, exibe um alerta para o usuário
+            else {
+              echo "<script>
+              alert('Usuário ou senha incorretos!!');
+              </script>";
+            }
+          }
+        // Encerra a conexão com o banco de dados
+          mysqli_close($link);
+        }
+        ?>

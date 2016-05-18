@@ -94,6 +94,7 @@ session_start();
               }
               if(isset($_POST['logout'])) {
                 unset($_SESSION['usuario']);
+                unset($_SESSION['funcao']);
                 header("location: ../index.php");
               }
               ?>
@@ -120,7 +121,7 @@ session_start();
         
         // consulta para puxar do banco usuario e senha que sejam iguais aos digitados no form de login
 
-        $query = "SELECT senha, usuario FROM usuarios WHERE usuario='$user' AND senha='$pass'";
+        $query = "SELECT senha, usuario, funcao FROM usuarios WHERE usuario='$user' AND senha='$pass'";
         $result = mysqli_query($link, $query);      // Executa a query e salva o resultado
         
         // Checa se houve resultado da consulta
@@ -128,6 +129,14 @@ session_start();
             $arr = mysqli_fetch_assoc($result);     // Transforma o resultado da consulta em um array associativo (os índices são as colunas da tabela 'usuarios')
             $row = mysqli_num_rows($result);        // Recebe o número de linhas retornadas da consulta ao banco
 
+            if($arr['funcao'] == "adm"){
+              if(!isset($_SESSION['funcao'])){
+                $_SESSION['funcao'] = "adm";
+                $funcao = "adm";
+              } else {
+                $funcao = $_SESSION['funcao'];
+              }
+            }
             // Checa se o usuário e senha digitados no form de login são iguais aos que estão salvos no banco de dados
             if($user == $arr['usuario'] && $pass == $arr['senha']){
                 // Se verdadeiro, salva o usuário na sessão
