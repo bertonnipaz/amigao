@@ -1,10 +1,15 @@
 <?php
 require_once 'cabecalho.php';
 
-$servername = "mysql.hostinger.com.br";
+/*$servername = "mysql.hostinger.com.br";
 $username = "u954200687_ibra";
 $password = "ibra2365877";
-$dbname = "u954200687_amigo";
+$dbname = "u954200687_amigo";*/
+
+$hostname="localhost";
+$username="root";
+$password="";
+$dbname="amigao";
 
 $connect = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -12,7 +17,7 @@ if (!$connect) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT peladeiro, gols FROM `artilheiros` ORDER BY gols DESC";
+$sql = "SELECT * FROM `artilheiros` ORDER BY gols DESC";
 $result = mysqli_query($connect, $sql);
 $pos = 0;
 ?>
@@ -36,13 +41,29 @@ $pos = 0;
               </thead>
               <tbody>
               <?php
-              while($array = mysqli_fetch_assoc($result)){
-                $pos++;
-                echo "<tr>
-                        <td>". $pos ."</td>
-                        <td>". $array['peladeiro'] ."</td>
-                        <td>". $array['gols'] ."</td>
-                      </tr>";
+              if(isset($_SESSION['funcao']) && $_SESSION['funcao'] == "adm"){
+                while($array = mysqli_fetch_assoc($result)){
+                  $pos++;
+                  $id = $array['id'];
+                  echo "<tr>
+                          <td>". $pos ."</td>
+                          <td>". $array['peladeiro'] ."</td>
+                          <td>". $array['gols'] ."</td>
+                          <td>
+                            <a href='art_update.php?id=". $id ."' title='Editar'>&#9998</a>
+                          </td>
+                        </tr>";
+                }
+              } else {
+                while($array = mysqli_fetch_assoc($result)){
+                  $pos++;
+                  $id = $array['id'];
+                  echo "<tr>
+                          <td>". $pos ."</td>
+                          <td>". $array['peladeiro'] ."</td>
+                          <td>". $array['gols'] ."</td>
+                        </tr>";
+                }
               }
               ?>
               </tbody>

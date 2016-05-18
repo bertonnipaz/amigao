@@ -1,9 +1,14 @@
 <?php
 
-$servername = "mysql.hostinger.com.br";
+/*$servername = "mysql.hostinger.com.br";
 $username = "u954200687_ibra";
 $password = "ibra2365877";
-$dbname = "u954200687_amigo";
+$dbname = "u954200687_amigo";*/
+
+$hostname="localhost";
+$username="root";
+$password="";
+$dbname="amigao";
 
 $connect = mysqli_connect($servername, $username, $password, $dbname);
 

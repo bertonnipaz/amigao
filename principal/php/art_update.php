@@ -1,5 +1,26 @@
 <?php
 require_once 'cabecalho.php';
+
+/*$servername = "mysql.hostinger.com.br";
+$username = "u954200687_ibra";
+$password = "ibra2365877";
+$dbname = "u954200687_amigo";*/
+
+$hostname="localhost";
+$username="root";
+$password="";
+$dbname="amigao";
+
+$connect = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$connect) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT * FROM `artilheiros` ORDER BY gols DESC";
+$result = mysqli_query($connect, $sql);
+$pos = 0;
+$idGET = $_GET['id'];
 ?>
     <title>Artilharia</title>
     <div class="container marketing">
@@ -11,6 +32,7 @@ require_once 'cabecalho.php';
 
         <div class="row">
           <div class="col-md-6">
+              <form action="update.php" method="POST">
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -20,45 +42,41 @@ require_once 'cabecalho.php';
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Bertonni</td>
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Emílio</td>
-                  <td>9</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Victor</td>
-                  <td>8</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Piqueno</td>
-                  <td>8</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Beethoven</td>
-                  <td>7</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>Daniel</td>
-                  <td>6</td>
-                </tr>
+              <?php
+              while($array = mysqli_fetch_assoc($result)){
+                $pos++;
+                $id = $array['id'];
+                $peladeiro = $array['peladeiro'];
+                $gols = $array['gols'];
+
+                if($idGET == $id){
+                  echo "<tr>
+                          <td>{$pos}</td>
+                          <td>
+                            <input type='text' name='peladeiro' value='{$peladeiro}'
+                          </td>
+                          <td>
+                            <input type='text' name='gols' value='{$gols}'
+                          </td>
+                          <td>
+                            <input name='id' type='hidden' id='id' value='{$id}'>
+                          </td>
+                        </tr>";
+                } else {
+                  echo "<tr>
+                          <td>". $pos ."</td>
+                          <td>". $array['peladeiro'] ."</td>
+                          <td>". $array['gols'] ."</td>
+                        </tr>";
+                }
+              }
+              ?>
               </tbody>
             </table>
+              <button type="submit" class="btn btn-primary" name="salvar">Salvar</button>
+              </form>
           </div>
         </div>
-        <?php
-        if(isset($_SESSION['funcao']) && $_SESSION['funcao'] == "adm"){
-          echo "<a href='art_update.php'>Atualizar Tabela</a>";
-        }
-        ?>
       </div>
       <br>
       <br>
