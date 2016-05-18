@@ -1,7 +1,7 @@
 <?php
 require_once 'cabecalho.php';
 
-$servername = "localhost";
+$servername = "mysql.hostinger.com.br";
 $username = "u954200687_ibra";
 $password = "ibra2365877";
 $dbname = "u954200687_amigo";
