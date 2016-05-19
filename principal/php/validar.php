@@ -41,17 +41,16 @@ if($row = mysqli_num_rows($res)){
 } else {
 	$query = "INSERT INTO `usuarios` (`funcao`, `nome`, `idade`, `usuario`, `senha`) VALUES ('$funcao', '$nome', '$idade', '$usuario', '$senha')";
 	$result = mysqli_query($connect, $query);
-}
 
-if($result) {
-	echo "<div class='container marketing'>";
-	echo "<div class='page-header'>
-          	<h5>Usuário cadastrado com sucesso</h5>
-          </div><br/>/<br/>";
-	echo "<a href='../index.php'>Clique aqui para voltar à página principal</a>";
-}
-else {
-	echo "Error: " . $query . "<br>" . mysqli_error($connect);
+	if($result) {
+		echo "<div class='container marketing'>";
+		echo "<div class='page-header'>
+	          	<h5>Usuário cadastrado com sucesso</h5>
+	          </div><br/>/<br/>";
+		echo "<a href='../index.php'>Clique aqui para voltar à página principal</a>";
+	} else {
+		echo "Error: " . $query . "<br>" . mysqli_error($connect);
+	}
 }
 
 mysqli_close($connect);
