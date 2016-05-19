@@ -18,21 +18,19 @@ if (!$connect) {
 
 $funcao = "membro";
 $nome = $_POST['nome'];
-if(isset($_POST['idade'])){
-	$idade = $_POST['idade'];
-} else {
-	$idade = "";
-}
+$idade = $_POST['idade'];
 $usuario = $_POST['usuario'];
 $senha = md5($_POST['senha']);
 
 $sql = "SELECT usuario FROM usuarios WHERE usuario = '$usuario'";
 $res = mysqli_query($connect, $sql);
-$row = mysqli_num_rows($res);
 
-if($row != 0){
-	if(!isset($_SESSION['dublicate'])){
-		$_SESSION['dublicate'] = "existe";
+if($row = mysqli_num_rows($res)){
+	if($row != 0){
+		if(!isset($_SESSION['dublicate'])){
+			$_SESSION['dublicate'] = "existe";
+			header("location: cadastro.php");
+		}
 	}
 } else {
 	$query = "INSERT INTO `usuarios` (`funcao`, `nome`, `idade`, `usuario`, `senha`) VALUES ('$funcao', '$nome', '$idade', '$usuario', '$senha')";
