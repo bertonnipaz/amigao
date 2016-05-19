@@ -28,7 +28,7 @@ $senha = md5($_POST['senha']);
 
 $sql = "SELECT usuario FROM usuarios WHERE usuario = '$usuario'";
 $res = mysqli_query($connect, $sql);
-$row = mysqli_num_rows($res)
+$row = mysqli_num_rows($res);
 
 if($row != 0){
 	if(!isset($_SESSION['dublicate'])){
