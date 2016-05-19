@@ -32,7 +32,9 @@ if($row = mysqli_num_rows($res)){
 		if(!isset($_SESSION['dublicate'])){
 			$_SESSION['dublicate'] = "existe";
 			echo "<div class='container marketing'>";
-			echo "<h3 style='color: red;'>*** Alguém está usando o nome de usuário escolhido, por favor, escolha outro!! ***</h3><br/></br/>";
+			echo "<div class='page-header'>
+          			<h5 style='color: red;'>*** Alguém está usando o nome de usuário escolhido, por favor, escolha outro!! ***</h5>
+          		  </div><br/>/<br/>";
 			echo "<a href='cadastro.php'>Clique aqui para voltar à página de cadastro</a>";
 		}
 	}
@@ -43,11 +45,13 @@ if($row = mysqli_num_rows($res)){
 
 if($result) {
 	echo "<div class='container marketing'>";
-	echo "<h3>Usuário cadastrado com sucesso</h3><br/></br/>";
+	echo "<div class='page-header'>
+          	<h5>Usuário cadastrado com sucesso</h5>
+          </div><br/>/<br/>";
 	echo "<a href='../index.php'>Clique aqui para voltar à página principal</a>";
 }
 else {
-	echo "Error: " . $query . "<br>" . mysqli_error($conn);
+	echo "Error: " . $query . "<br>" . mysqli_error($connect);
 }
 
 mysqli_close($connect);
