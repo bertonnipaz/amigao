@@ -13,8 +13,9 @@ require_once 'cabecalho.php';
 			<h1>Cadastro</h1>
 		</div>
 		<?php
-		if(isset($_SESSION['duplicate']) && $_SESSION['duplicate'] == "existe"){
+		if(isset($_SESSION['duplicate'])){
 			echo "<span style='color: red;'>Alguem já está usando o nome de usuário escolhido, por favor, escolha outro</span>";
+			unset($_SESSION['duplicate']);
 		}
 		?>
 		<div class="row">
