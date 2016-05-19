@@ -7,15 +7,15 @@ if(isset($_POST['enviar'])) {
     
     // Salva os dados do servidor, usuario, senha e nome do banco de dados para fazer a conexão
 
-    /*$hostname = "mysql.hostinger.com.br";
+    $hostname = "mysql.hostinger.com.br";
     $username = "u954200687_ibra";
     $password = "ibra2365877";
-    $dbname = "u954200687_amigo";*/
+    $dbname = "u954200687_amigo";
 
-    $hostname="localhost";
+    /*$hostname="localhost";
     $username="root";
     $password="";
-    $dbname="amigao";
+    $dbname="amigao";*/
 
     $connect = mysqli_connect($hostname, $username, $password, $dbname);    // Faz a conexão com o banco de dados
         
@@ -246,15 +246,15 @@ if(isset($_POST['logout'])) {
             </div><!-- /.col-lg-4 -->
         </div><!-- /.container theme-showcase -->
          <?php
-        /*$hostname = "mysql.hostinger.com.br";
+        $hostname = "mysql.hostinger.com.br";
         $username = "u954200687_ibra";
         $password = "ibra2365877";
-        $dbname = "u954200687_amigo";*/
+        $dbname = "u954200687_amigo";
     
-        $hostname="localhost";
+        /*$hostname="localhost";
         $username="root";
         $password="";
-        $dbname="amigao";
+        $dbname="amigao";*/
     
         $connect = mysqli_connect($hostname, $username, $password, $dbname);    // Faz a conexão com o banco de dados
         
