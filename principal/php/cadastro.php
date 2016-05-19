@@ -12,13 +12,12 @@ require_once 'cabecalho.php';
 		<div id="artilharia" class="page-header">
 			<h1>Cadastro</h1>
 		</div>
+		<div class="row">
 		<?php
 		if(isset($_SESSION['duplicate'])){
-			echo "<span style='color: red;'>Alguem já está usando o nome de usuário escolhido, por favor, escolha outro</span>";
-			unset($_SESSION['duplicate']);
+			echo "<span style='color: red;'>*** Alguem já está usando o nome de usuário escolhido, por favor, escolha outro ***</span>";
 		}
 		?>
-		<div class="row">
 			<form method="POST" action="validar.php">
 				<div class="col-md-6">
 					<label for="nome">Nome *</label>

@@ -1,5 +1,5 @@
 <?php
-
+unset($_SESSION['duplicate']);
 $servername = "mysql.hostinger.com.br";
 $username = "u954200687_ibra";
 $password = "ibra2365877";
