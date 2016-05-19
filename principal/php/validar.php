@@ -1,4 +1,6 @@
 <?php
+require_once 'cabecalho.php';
+
 unset($_SESSION['duplicate']);
 $servername = "mysql.hostinger.com.br";
 $username = "u954200687_ibra";
@@ -29,7 +31,9 @@ if($row = mysqli_num_rows($res)){
 	if($row != 0){
 		if(!isset($_SESSION['dublicate'])){
 			$_SESSION['dublicate'] = "existe";
-			header("location: cadastro.php");
+			echo "<div class='container marketing'>";
+			echo "<h3 style='color: red;'>*** Alguém está usando o nome de usuário escolhido, por favor, escolha outro!! ***</h3><br/></br/>";
+			echo "<a href='cadastro.php'>Clique aqui para voltar à página de cadastro</a>";
 		}
 	}
 } else {
@@ -38,11 +42,15 @@ if($row = mysqli_num_rows($res)){
 }
 
 if($result) {
-	header("location: ../index.php");
+	echo "<div class='container marketing'>";
+	echo "<h3>Usuário cadastrado com sucesso</h3><br/></br/>";
+	echo "<a href='../index.php'>Clique aqui para voltar à página principal</a>";
 }
 else {
 	echo "Error: " . $query . "<br>" . mysqli_error($conn);
 }
 
 mysqli_close($connect);
+
+require_once 'rodape.php';
 ?>
