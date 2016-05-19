@@ -250,7 +250,7 @@ session_start();
         
         // Salva os dados do servidor, usuario, senha e nome do banco de dados para fazer a conexão
 
-        $servername = "mysql.hostinger.com.br";
+        $hostname = "mysql.hostinger.com.br";
         $username = "u954200687_ibra";
         $password = "ibra2365877";
         $dbname = "u954200687_amigo";
@@ -260,12 +260,12 @@ session_start();
         $password="";
         $dbname="amigao";*/
 
-        $link = mysqli_connect ($server, $username, $password, $dbname);    // Faz a conexão com o banco de dados
+        $connect = mysqli_connect($hostname, $username, $password, $dbname);    // Faz a conexão com o banco de dados
         
         // consulta para puxar do banco usuario e senha que sejam iguais aos digitados no form de login
 
         $query = "SELECT senha, usuario, funcao FROM usuarios WHERE usuario='$user' AND senha='$pass'";
-        $result = mysqli_query($link, $query);      // Executa a query e salva o resultado
+        $result = mysqli_query($connect, $query);      // Executa a query e salva o resultado
         
         // Checa se houve resultado da consulta
         if($result){
@@ -299,6 +299,6 @@ session_start();
             }
           }
         // Encerra a conexão com o banco de dados
-          mysqli_close($link);
+          mysqli_close($connect);
         }
         ?>

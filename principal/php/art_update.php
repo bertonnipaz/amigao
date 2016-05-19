@@ -1,7 +1,7 @@
 <?php
 require_once 'cabecalho.php';
 
-$servername = "mysql.hostinger.com.br";
+$hostname = "mysql.hostinger.com.br";
 $username = "u954200687_ibra";
 $password = "ibra2365877";
 $dbname = "u954200687_amigo";
@@ -11,7 +11,7 @@ $username="root";
 $password="";
 $dbname="amigao";*/
 
-$connect = mysqli_connect($servername, $username, $password, $dbname);
+$connect = mysqli_connect($hostname, $username, $password, $dbname);
 
 if (!$connect) {
   die("Connection failed: " . mysqli_connect_error());
