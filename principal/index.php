@@ -43,7 +43,7 @@ if(isset($_POST['enviar'])) {
         $_SESSION['usuario'] = $user;
       }
 
-        // Checa se o número de linhas retornadas da consulta é diferente de zero. Se verdadeiro, redireciona para a página "home.php"
+        // Checa se o número de linhas retornadas da consulta é diferente de zero. Se verdadeiro, redireciona para a página "index.php"
       if($row != 0) {
         header("location: index.php");
       }
@@ -67,7 +67,7 @@ if(isset($_POST['enviar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Bertonni">
     <link rel="shortcut icon" href="imagens/amigao.jpg"/>
 
     <title>Pelada do Amigão</title>
@@ -144,7 +144,8 @@ if(isset($_POST['enviar'])) {
                   <button class="btn btn-success" style="float: right;" type="submit" name="logout">Logout</button>
                 </form>
                 <?php
-                echo "<span style='color: white; margin-top: 1%;' class='navbar-form navbar-right'>Bem vindo, <b>" . $_SESSION['usuario'] . "</b>!! </span>";
+                // echo "<span style='color: white; margin-top: 1%;' class='navbar-form navbar-right'>Bem vindo, <b>" . $_SESSION['usuario'] . "</b>!! </span>";
+                echo "<div class='navbar-right' style='margin-top: 1%; color: white;'>Bem vindo, <b>" . $_SESSION['usuario'] . "</b>!!</div>";
               }
               if(isset($_POST['logout'])) {
                 unset($_SESSION['usuario']);                
