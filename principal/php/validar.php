@@ -48,7 +48,6 @@ if($row != 0) {
 			     	<h4 style='margin-top: 40px;'> Usuário cadastrado com sucesso!!</h4>
 				  </div>
 			      </div>
-			      <a href='../index.php'>Ir para a página principal</a><br/><br/>
       		";
 	}
 	else {
