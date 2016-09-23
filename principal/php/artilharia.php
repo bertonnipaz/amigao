@@ -72,6 +72,7 @@ $pos = 0;
       </div>
       <br>
       <br>
+      <p style="margin-left: 15px;" class="pull-right"><a href="#">Ir para o topo</a></p>
 <?php
 require_once 'rodape.php';
 ?>

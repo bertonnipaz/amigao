@@ -118,7 +118,7 @@ session_start();
         $password = "ibra2365877";
         $dbname = "u954200687_amigo";
 
-       /* $hostname="localhost";
+        /*$hostname="localhost";
         $username="root";
         $password="";
         $dbname="amigao";*/
