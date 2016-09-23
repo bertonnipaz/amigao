@@ -8,9 +8,9 @@ if(isset($_POST['enviar'])) {
     // Salva os dados do servidor, usuario, senha e nome do banco de dados para fazer a conexão
 
     $hostname = "mysql.hostinger.com.br";
-    $username = "u954200687_ibra";
-    $password = "ibra2365877";
-    $dbname = "u954200687_amigo";
+    $username = "u282775039_tonni";
+    $password = "amigao2005";
+    $dbname = "u282775039_amigo";
 
     /*$hostname="localhost";
     $username="root";
@@ -248,9 +248,9 @@ if(isset($_POST['enviar'])) {
             </div><!-- /.container theme-showcase -->
             <?php
             $hostname = "mysql.hostinger.com.br";
-            $username = "u954200687_ibra";
-            $password = "ibra2365877";
-            $dbname = "u954200687_amigo";
+            $username = "u282775039_tonni";
+            $password = "amigao2005";
+            $dbname = "u282775039_amigo";
 
             /*$hostname="localhost";
             $username="root";
